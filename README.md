@@ -33,11 +33,14 @@ By using the alternative constructors, you can set your own
   ```swift
     let customParams: [String: String] = ["Your_custom_param": "Value"]
     
-    let trackingParamsWithCuid = TrackingParams(action: "action", requestId: "Your_request_id", cuid: "Your_cuid")  
+    let trackingParamsWithCuid = TrackingParams(action: "action", requestId: "Your_request_id",
+                                                cuid: "Your_cuid")  
     
-    let trackingParamsWithCustomParams = TrackingParams(action: "action", requestId: "Your_request_id", customTrackingParams: customParams)
+    let trackingParamsWithCustomParams = TrackingParams(action: "action", requestId: "Your_request_id", 
+                                                        customTrackingParams: customParams)
     
-    let trackingParamsWithCuidAndCustomParams = TrackingParams(action: "action", requestId: "Your_request_id", cuid: "Your_cuid", customTrackingParams: customParams)
+    let trackingParamsWithBoth = TrackingParams(action: "action", requestId: "Your_request_id",
+                                                cuid: "Your_cuid", customTrackingParams: customParams)
   ```
 - Don't include space in the name of the key for you custom tracking parameters in `TrackingParams` class. 
 
@@ -52,9 +55,12 @@ By using the alternative constructors, you can set your own
     
     let userTracker = UserTracker(appKey: "Your_app_key")
     
-    let userTrackerWithCustomTimeoutValue = UserTracker(timeoutInterval: timeInterval, appKey: "Your_app_key")
+    let userTrackerWithCustomTimeoutValue = UserTracker(timeoutInterval: timeInterval, 
+                                                        appKey: "Your_app_key")
     
-    let userTrackerWithCustomEndpoint = UserTracker(appKey: "Your_app_key", trackingUrl: "Your_URL", trackEndpoint: "Your_endpoint")
+    let userTrackerWithCustomEndpoint = UserTracker(appKey: "Your_app_key", trackingUrl: "Your_URL",
+                                                    trackEndpoint: "Your_endpoint")
     
-    let userTrackerWithCustomTimeoutAndEndpoint = UserTracker(timeoutInterval: timeInterval, appKey: "Your_app_key", trackingUrl: "Your_URL", trackEndpoint: "Your_endpoint")
+    let userTrackerWithBoth = UserTracker(timeoutInterval: timeInterval, appKey: "Your_app_key",
+                                          trackingUrl: "Your_URL", trackEndpoint: "Your_endpoint")
   ```
